@@ -89,10 +89,8 @@ export default function Layout() {
           <Link className="footer-brand" to="/">
             Lelexia <span>作品论坛</span>
           </Link>
-          <p>游戏让我们相遇，交流让灵感延续。</p>
         </div>
         <div>
-          <span>独立作品 · 共同探索</span>
           <p>© {new Date().getFullYear()} Lelexia · 前端演示版</p>
         </div>
       </footer>

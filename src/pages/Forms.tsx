@@ -24,15 +24,7 @@ export function AuthPage({ register = false }: { register?: boolean }) {
           src={`${import.meta.env.BASE_URL}favicon.svg`}
           alt="Lelexia"
         />
-        <span className="eyebrow">LELEXIA COMMUNITY</span>
-        <h1>{register ? "开启新的相遇" : "欢迎回来"}</h1>
-        <p>
-          {register ? "让灵感与热爱，在这里延续。" : "回到属于玩家的交流角落。"}
-        </p>
-        <div className="form-notice">
-          <LockKeyhole size={17} />
-          {register ? "注册" : "登录"}服务尚未开放
-        </div>
+        <h1>{register ? "注册" : "登录"}</h1>
         <form onSubmit={(event) => event.preventDefault()}>
           {register && (
             <label>
@@ -74,7 +66,6 @@ export function AuthPage({ register = false }: { register?: boolean }) {
           </Link>
         </div>
       </section>
-      <p className="auth-footnote">当前仅展示界面，不收集账号或密码。</p>
     </div>
   );
 }
@@ -92,17 +83,12 @@ export function EditorPage() {
   return (
     <>
       <Breadcrumb items={[{ label: "发表主题" }]} />
-      <PageHeading
-        title="分享你的想法"
-        description="一份心得、一个问题，或一闪而过的灵感。"
-      />
+      <PageHeading title="发表主题" />
       <div className="editor-layout">
         <section className="panel editor-panel">
           <div className="form-notice">
             <LockKeyhole size={17} />
-            <span>
-              发帖服务尚未开放。可以体验编辑与预览，离开页面后内容不会保存。
-            </span>
+            <span>仅供编辑预览，内容不会保存。</span>
           </div>
           <form onSubmit={(event) => event.preventDefault()}>
             <label>
@@ -139,7 +125,6 @@ export function EditorPage() {
             </label>
             <div className="editor-label">
               <label htmlFor="post-body">正文</label>
-              <span>纯文本编辑器</span>
             </div>
             <div className="editor-toolbar">
               <button
@@ -194,16 +179,6 @@ export function EditorPage() {
             </div>
           </form>
         </section>
-        <aside className="panel writing-tips">
-          <PencilLine size={23} />
-          <h2>让交流更有意义</h2>
-          <h3>一个清楚的标题</h3>
-          <p>概括你的问题或发现，让感兴趣的人更容易找到。</p>
-          <h3>一个合适的版块</h3>
-          <p>攻略、反馈与创作，各有适合它们的交流空间。</p>
-          <h3>一点善意与耐心</h3>
-          <p>尊重彼此的体验，认真表达，也认真倾听。</p>
-        </aside>
       </div>
     </>
   );

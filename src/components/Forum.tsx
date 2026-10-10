@@ -10,8 +10,6 @@ import {
   MessagesSquare,
   Pin,
   Shapes,
-  Shield,
-  Sparkles,
   Swords,
   Tent,
   Trophy,
@@ -110,7 +108,6 @@ export function BoardGroup({ gameId }: { gameId: Board["gameId"] }) {
           <h2>
             {game.name} <span>{game.english}</span>
           </h2>
-          <p>{game.tagline}</p>
         </div>
         <span className="board-count">4 个版块</span>
       </div>
@@ -255,7 +252,7 @@ export function TopicList({
                     </Link>
                     <Link to={`/users/${user.id}`}>{user.nickname}</Link>
                     <time dateTime={topic.createdAt}>
-                    {formatDate(topic.createdAt, !compact)}
+                      {formatDate(topic.createdAt, !compact)}
                     </time>
                     <span className="demo-tag">演示</span>
                   </div>
@@ -286,26 +283,11 @@ export function TopicList({
 }
 
 export function Sidebar() {
-  const { topics, boards } = useForum();
   return (
     <aside className="sidebar">
-      <section className="panel welcome-card">
-        <span className="eyebrow">A PLACE FOR PLAYERS</span>
-        <div className="sidebar-emblem">
-          <MessagesSquare size={31} strokeWidth={1.4} />
-          <Sparkles size={17} />
-        </div>
-        <h2>因为热爱，相聚于此。</h2>
-        <p>
-          交流每一个灵感，
-          <br />
-          记录每一次探索。
-        </p>
-        <Link className="button primary wide" to="/new">
-          发起一个话题 <ArrowRight size={16} />
-        </Link>
-        <span className="quiet-note">当前为演示社区，发帖暂未开放</span>
-      </section>
+      <Link className="button primary wide" to="/new">
+        发表主题 <ArrowRight size={16} />
+      </Link>
       <section className="panel sidebar-section">
         <h2>
           <Compass size={17} /> 社区导航
@@ -326,25 +308,6 @@ export function Sidebar() {
           <ChevronRight size={14} />
         </Link>
       </section>
-      <section className="panel sidebar-section guide-card">
-        <h2>
-          <Shield size={17} /> 交流小约定
-        </h2>
-        <p>友善交流，尊重不同的声音。</p>
-        <p>攻略与解法，请提前标注剧透。</p>
-        <p>反馈问题，记得附上复现步骤。</p>
-        <Link className="text-link" to="/topics/feedback-guide">
-          查看反馈指南 <ArrowRight size={14} />
-        </Link>
-      </section>
-      <div className="demo-summary">
-        <span className="status-dot" /> 前端演示版
-        <div>
-          <span>{boards.length} 个版块</span>
-          <span>{topics.length} 篇示例主题</span>
-        </div>
-        <p>内容与统计均为演示数据</p>
-      </div>
     </aside>
   );
 }

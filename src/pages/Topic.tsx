@@ -47,12 +47,6 @@ function Floor({
           <span>{floor === 1 ? "1 楼 · 楼主" : `${floor} 楼`}</span>
         </div>
         <div className="post-body">{post.body}</div>
-        <div className="post-bottom">
-          <span>演示内容</span>
-          <span>
-            <MessageSquare size={14} /> {floor === 1 ? "主题正文" : "回复"}
-          </span>
-        </div>
       </div>
     </article>
   );
@@ -137,7 +131,6 @@ export function TopicPage() {
         <LockKeyhole size={21} />
         <div>
           <h3>回复功能尚未开放</h3>
-          <p>社区目前处于前端预览阶段，暂不支持发布回复。</p>
         </div>
         <button className="button" disabled>
           发表回复

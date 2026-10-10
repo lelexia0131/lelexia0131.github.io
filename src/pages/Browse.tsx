@@ -5,7 +5,6 @@ import {
   Megaphone,
   Plus,
   Search,
-  Sparkles,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
@@ -26,17 +25,7 @@ export function HomePage() {
   return (
     <>
       <div className="home-intro">
-        <div>
-          <span className="eyebrow">LELEXIA COMMUNITY</span>
-          <h1>
-            每一个世界，都值得一起探索<span>。</span>
-          </h1>
-          <p>欢迎来到 Lelexia 作品论坛。聊游戏，找攻略，分享你的奇思妙想。</p>
-        </div>
-        <span className="intro-decoration" aria-hidden="true">
-          <Grid2X2 size={49} strokeWidth={1} />
-          <Sparkles size={25} strokeWidth={1.4} />
-        </span>
+        <h1>Lelexia 作品论坛</h1>
       </div>
       <div className="announcement">
         <span>
@@ -70,10 +59,7 @@ export function BoardsPage() {
   return (
     <>
       <Breadcrumb items={[{ label: "版面列表" }]} />
-      <PageHeading
-        title="版面列表"
-        description="两个游戏世界，八个交流角落。找到你感兴趣的话题。"
-      />
+      <PageHeading title="版面列表" />
       <Columns>
         <BoardGroup gameId="fiverealms" />
         <BoardGroup gameId="wildgrid" />
@@ -150,11 +136,6 @@ export function FeedPage({ featured = false }: { featured?: boolean }) {
       <Breadcrumb items={[{ label: title }]} />
       <PageHeading
         title={title}
-        description={
-          featured
-            ? "值得慢慢读的策略笔记与探索心得。"
-            : "发现作品社区里正在发生的讨论。"
-        }
         action={
           <Link className="button primary" to="/new">
             <Plus size={16} />
@@ -207,10 +188,7 @@ export function SearchPage() {
   return (
     <>
       <Breadcrumb items={[{ label: "搜索" }]} />
-      <PageHeading
-        title="发现你感兴趣的讨论"
-        description="搜索主题标题与正文，寻找攻略、灵感和答案。"
-      />
+      <PageHeading title="搜索" />
       <Columns>
         <section className="panel search-panel">
           <form
